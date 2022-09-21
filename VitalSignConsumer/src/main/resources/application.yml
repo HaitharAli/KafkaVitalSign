@@ -1,0 +1,23 @@
+server:
+  port: 9101
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: vital-consumer-module
+
+  cloud:
+    consul:
+      discovery:
+        health-check-path: /test
+        prefer-agent-address: false
+        prefer-ip-address: true
+        
+  profiles:
+    active:
+    - local
+    
